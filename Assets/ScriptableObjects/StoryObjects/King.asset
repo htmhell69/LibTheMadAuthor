@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfc5f2f2a9c94420f9517657ee3424ad, type: 3}
   m_Name: King
   m_EditorClassIdentifier: 
-  instances: []
+  instances:
+  - type: 0
+    gameObject: {fileID: 0}
   objectName: King

@@ -22,31 +22,72 @@ public class StorySection
         }
         return text;
     }
+
+    public string GetSection(int index)
+    {
+        int startingIndex = 0;
+        if (index != 0)
+        {
+            startingIndex = contexts[index - 1].GetStringIndex(text) + 1;
+        }
+        int endIndex = text.Length;
+        if (index != contexts.Length)
+        {
+            endIndex = contexts[index].GetStringIndex(text) - 1;
+        }
+
+        if (endIndex < 0)
+        {
+            return "";
+        }
+        return text.Substring(startingIndex, endIndex - startingIndex);
+    }
+    public int GetSectionCount()
+    {
+        return contexts.Length;
+    }
 }
 
 [System.Serializable]
 public class SectionContext
 {
-    [SerializeField] char replacementCharacter;
-    [SerializeField] int storyObjectIndex = -1;
-    [SerializeField] StoryObjectAction action;
-    [SerializeField] int modifier;
-    [SerializeField] int amountTargeted;
-    [Header("Extra params for object creation.")]
-    [SerializeField] CreationParams creationParams;
-
-
+    [System.Serializable]
+    public class BaseParams
+    {
+        public char replacementCharacter;
+        public int storyObjectIndex = -1;
+        public StoryObjectAction action;
+        public int modifier;
+        public int amountTargeted;
+    }
+    [System.Serializable]
+    public struct ExtraParams
+    {
+        public StoryObject.Types type;
+        public Vector2[] positions;
+    }
+    [SerializeField] BaseParams baseParams;
+    [SerializeField] ExtraParams extraParams;
 
     public string GetContext(StoryData storyData)
     {
-        return storyData.GetStoryObject(storyObjectIndex).GetName(); ;
+        return storyData.GetStoryObject(baseParams.storyObjectIndex).GetName(); ;
+    }
+    public BaseParams GetBaseParams()
+    {
+        return baseParams;
+    }
+    public ExtraParams GetExtraParams()
+    {
+        return extraParams;
     }
 
     public int GetStringIndex(string text)
     {
-        return text.IndexOf(replacementCharacter);
+        return text.IndexOf(baseParams.replacementCharacter);
     }
 }
+
 
 public enum StoryObjectAction
 {
@@ -57,10 +98,4 @@ public enum StoryObjectAction
     Heal,
     Nothing
 }
-[System.Serializable]
-public struct CreationParams
-{
-    [SerializeField] StoryObject.Types type;
-    [SerializeField] int count;
-    [SerializeField] Vector2[] position;
-}
+

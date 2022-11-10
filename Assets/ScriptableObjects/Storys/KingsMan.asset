@@ -12,22 +12,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b2a96805dd3c4ded930fa97f019b8e0, type: 3}
   m_Name: KingsMan
   m_EditorClassIdentifier: 
-  start:
-    text: 
-    contexts: []
   sections:
-  - text: '* and his '
+  - text: It was bright and early in the morning when * heard something from downstairs.
+      So he ran down and sap & ghich was cool.
     contexts:
-    - replacementCharacter: 42
-      storyObjectIndex: -1
-      action: 5
-      modifier: 0
-      amountTargeted: 0
-      creationParams:
+    - baseParams:
+        replacementCharacter: 42
+        storyObjectIndex: -1
+        action: 0
+        modifier: 0
+        amountTargeted: 0
+      extraParams:
         type: 0
-        count: 0
-        position: []
-  - text: 
-    contexts: []
-  - text: 
-    contexts: []
+        positions: []
+    - baseParams:
+        replacementCharacter: 38
+        storyObjectIndex: -1
+        action: 0
+        modifier: 0
+        amountTargeted: 0
+      extraParams:
+        type: 0
+        positions: []
+  storyObjectCount: 20
