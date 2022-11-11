@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sections:
   - text: It was bright and early in the morning when * heard something from downstairs.
-      So he ran down and sap & ghich was cool.
+      So he ran down and saw &.
     contexts:
     - baseParams:
         replacementCharacter: 42
-        storyObjectIndex: -1
+        storyObjectIndex: 0
         action: 0
         modifier: 0
         amountTargeted: 0
@@ -27,7 +27,7 @@ MonoBehaviour:
         positions: []
     - baseParams:
         replacementCharacter: 38
-        storyObjectIndex: -1
+        storyObjectIndex: 0
         action: 0
         modifier: 0
         amountTargeted: 0

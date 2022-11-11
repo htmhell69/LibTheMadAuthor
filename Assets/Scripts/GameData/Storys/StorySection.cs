@@ -46,6 +46,11 @@ public class StorySection
     {
         return contexts.Length;
     }
+
+    public SectionContext GetSectionContext(int index)
+    {
+        return contexts[index];
+    }
 }
 
 [System.Serializable]
@@ -85,6 +90,10 @@ public class SectionContext
     public int GetStringIndex(string text)
     {
         return text.IndexOf(baseParams.replacementCharacter);
+    }
+    public int ReferenceStoryObject()
+    {
+        return baseParams.storyObjectIndex;
     }
 }
 

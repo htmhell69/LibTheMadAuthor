@@ -12,51 +12,78 @@ public class BookCreation : MonoBehaviour
     [SerializeField] TMP_Text textMesh;
     [SerializeField] string transitionString;
     [SerializeField] float xInputPrefabOffset;
-    GameObject[] inputs;
-    StoryData storyData;
-    int sectionIndex;
-    int inputIndex;
+    List<StoryFillIn> storyInputs = new List<StoryFillIn>();
+    BookCreationData bookData;
+    int sectionIndex = 0;
+    int inputIndex = 0;
     public void Start()
     {
         Story story = gameManager.ChooseStory();
+        bookData = new BookCreationData(story.StoryObjectCount());
         PlaceCoverObjects(ChooseBooks(story));
         LoadSection(story.GetSection(0));
     }
     public void Forward()
     {
-        Debug.Log("forward i think");
+        inputIndex++;
+    }
+    public void Back()
+    {
+        inputIndex--;
     }
     CoverObject[] ChooseBooks(Story story)
     {
         return gameManager.GenerateCoverObjects(story.StoryObjectCount());
     }
-    public void Back()
-    {
-        Debug.Log("back i think");
-    }
+
 
     void LoadSection(StorySection section)
     {
         inputIndex = 0;
+        storyInputs.Clear();
         for (int i = 0; i < section.GetSectionCount(); i++)
         {
-            CreateTextSextion(section, i);
+            CreateTextSection(section, i);
         }
-        CreateTextSextion(section, section.GetSectionCount());
+        CreateTextSection(section, section.GetSectionCount());
     }
 
-    void CreateTextSextion(StorySection section, int i)
+    void CreateTextSection(StorySection section, int i)
     {
-        textMesh.text += section.GetSection(i) + transitionString;
+        textMesh.text += section.GetSection(i);
         textMesh.ForceMeshUpdate(true);
         if (i != section.GetSectionCount() && textMesh.textInfo.lineCount != 0)
         {
-            TMP_CharacterInfo character = textMesh.textInfo.characterInfo[textMesh.textInfo.lineInfo[textMesh.textInfo.lineCount - 1].lastVisibleCharacterIndex];
+            Debug.Log("wassup");
+            TMP_CharacterInfo character = textMesh.textInfo.characterInfo[textMesh.textInfo.lineInfo[textMesh.textInfo.lineCount - 1].lastCharacterIndex];
             Vector2 position = textMesh.transform.TransformPoint(character.topRight);
             position.y -= (textMesh.transform.TransformPoint(character.topRight).y - textMesh.transform.TransformPoint(character.bottomRight).y) / 2;
-            position.x += inputPrefabTransform.sizeDelta.x * xInputPrefabOffset;
-            Instantiate(inputPrefab, position, Quaternion.identity).transform.SetParent(textMesh.transform);
+
+            char nextChar = section.GetText()[character.index + 2 - ((transitionString.Length) * storyInputs.Count)];
+            Debug.Log(nextChar);
+            if (nextChar == ' ')
+            {
+                position.x += inputPrefabTransform.sizeDelta.x * xInputPrefabOffset;
+
+            }
+            StoryFillIn storyInput = Instantiate(inputPrefab, position, Quaternion.identity).AddComponent<StoryFillIn>();
+            storyInput.transform.SetParent(textMesh.transform);
+            storyInput.SetReference(section.GetSectionContext(i).ReferenceStoryObject());
+            storyInputs.Add(storyInput);
+            textMesh.text += transitionString;
         }
+    }
+    public void SectionUpdate(int index)
+    {
+
+    }
+    public void ReloadSection()
+    {
+        for (int i = 0; i < storyInputs.Count; i++)
+        {
+            storyInputs[i].UpdateCycle(bookData);
+        }
+
     }
     public void PlaceCoverObjects(CoverObject[] coverObjects)
     {
@@ -72,6 +99,16 @@ public class BookCreation : MonoBehaviour
 
     public void AssignCoverObject(CoverObject coverObject)
     {
+        storyInputs[inputIndex].SetCoverObject(coverObject, bookData);
+        ReloadSection();
+    }
+}
 
+public struct BookCreationData
+{
+    public CoverObject[] coverObjects;
+    public BookCreationData(int size)
+    {
+        coverObjects = new CoverObject[size];
     }
 }
