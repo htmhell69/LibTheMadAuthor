@@ -10,9 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dfc5f2f2a9c94420f9517657ee3424ad, type: 3}
-  m_Name: Sword
+  m_Name: Car
   m_EditorClassIdentifier: 
   instances:
   - type: 0
-    gameObject: {fileID: 0}
-  objectName: Sword
+    gameObject: {fileID: 787899871660133381, guid: ae4fda48e7ed2499298d045ec3ebca54, type: 3}
+  - type: 2
+    gameObject: {fileID: 3410281229248182318, guid: 5d8749efb770443239b087e8591748b9, type: 3}
+  - type: 1
+    gameObject: {fileID: 8995943839746907629, guid: ba9d8729e92bd42cbb0b5ea7e4b5fb28, type: 3}
+  objectName: Car

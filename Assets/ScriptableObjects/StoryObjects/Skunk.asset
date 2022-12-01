@@ -10,9 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dfc5f2f2a9c94420f9517657ee3424ad, type: 3}
-  m_Name: King
+  m_Name: Skunk
   m_EditorClassIdentifier: 
   instances:
   - type: 0
-    gameObject: {fileID: 0}
-  objectName: King
+    gameObject: {fileID: 7923520656075016367, guid: d4d10f3b5c1654f75ab46865a012e859, type: 3}
+  - type: 2
+    gameObject: {fileID: 4414320515121499803, guid: 5269f65b66a79495bb0b37079f735a26, type: 3}
+  - type: 1
+    gameObject: {fileID: 3006616595415344528, guid: 16f5e1f697e5d4b05873a145ec5bf223, type: 3}
+  objectName: Skunk

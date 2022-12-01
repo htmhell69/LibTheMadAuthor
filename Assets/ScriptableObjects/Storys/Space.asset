@@ -1,0 +1,241 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b2a96805dd3c4ded930fa97f019b8e0, type: 3}
+  m_Name: Space
+  m_EditorClassIdentifier: 
+  sections:
+  - text: You sent out 1 onto the moon in hopes of stopping dr swez. But a group
+      of 2's were waiting for 3's arrival.
+    level: {fileID: 7802124823483562839, guid: 889efc714e3ba47159dc0a23f24c3f7c, type: 3}
+    positions: []
+    contexts:
+    - baseParams:
+        replacementCharacter: 49
+        storyObjectIndex: 0
+        action: 0
+        modifier: 2
+        amountTargeted: 1
+      extraParams:
+        type: 0
+        positions:
+        - {x: -10.5, y: 4}
+        maxPosX: []
+        maxPosY: []
+    - baseParams:
+        replacementCharacter: 50
+        storyObjectIndex: 1
+        action: 0
+        modifier: 1
+        amountTargeted: 2
+      extraParams:
+        type: 2
+        positions:
+        - {x: 18, y: 2.5}
+        - {x: 27.5, y: 2.5}
+        maxPosX:
+        - {x: 2, y: 0, z: 0}
+        - {x: 3, y: 0, z: 0}
+        maxPosY:
+        - {x: 0, y: 4, z: 0}
+        - {x: 0, y: 4, z: 0}
+    - baseParams:
+        replacementCharacter: 51
+        storyObjectIndex: 0
+        action: 5
+        modifier: 1
+        amountTargeted: 3
+      extraParams:
+        type: 0
+        positions:
+        - {x: 0, y: 0}
+        - {x: 27.5, y: 0}
+        maxPosX: []
+        maxPosY: []
+  - text: 1 runs up a mountain to escape but it was no ordinary mountain but a volcano.
+      The volcano was filled with 2's.
+    level: {fileID: 7802124823483562839, guid: 232d5e9e9ca8e470086ea02407cff9b5, type: 3}
+    positions:
+    - storyObjectIndex: 0
+      positions:
+      - {x: -14, y: 4, z: 0}
+    contexts:
+    - baseParams:
+        replacementCharacter: 49
+        storyObjectIndex: 0
+        action: 5
+        modifier: 2
+        amountTargeted: 1
+      extraParams:
+        type: 0
+        positions:
+        - {x: -10, y: 4}
+        maxPosX: []
+        maxPosY: []
+    - baseParams:
+        replacementCharacter: 50
+        storyObjectIndex: 2
+        action: 0
+        modifier: 1
+        amountTargeted: 3
+      extraParams:
+        type: 2
+        positions:
+        - {x: 25, y: -2}
+        - {x: 34, y: -2}
+        - {x: 66.5, y: 3}
+        maxPosX:
+        - {x: 3.5, y: 0, z: 0}
+        - {x: 11, y: 0, z: 0}
+        - {x: 6.5, y: 0, z: 0}
+        maxPosY:
+        - {x: 0, y: 4, z: 0}
+        - {x: 0, y: 4, z: 0}
+        - {x: 0, y: 4, z: 0}
+  - text: All of a sudden doctor swez transported 1 to mars where you left a 2. But
+      he was not alone as there were two 3's and a strong 4.
+    level: {fileID: 7802124823483562839, guid: 2b23569b31a95472ca9e01ffe9b2d143, type: 3}
+    positions:
+    - storyObjectIndex: 0
+      positions:
+      - {x: -14, y: 4, z: 0}
+    contexts:
+    - baseParams:
+        replacementCharacter: 49
+        storyObjectIndex: 0
+        action: 5
+        modifier: 2
+        amountTargeted: 1
+      extraParams:
+        type: 0
+        positions:
+        - {x: -10, y: 4}
+        maxPosX: []
+        maxPosY: []
+    - baseParams:
+        replacementCharacter: 50
+        storyObjectIndex: 3
+        action: 0
+        modifier: 1
+        amountTargeted: 1
+      extraParams:
+        type: 1
+        positions:
+        - {x: -11, y: 2}
+        maxPosX: []
+        maxPosY: []
+    - baseParams:
+        replacementCharacter: 51
+        storyObjectIndex: 4
+        action: 0
+        modifier: 1
+        amountTargeted: 2
+      extraParams:
+        type: 2
+        positions:
+        - {x: -8.5, y: 1.5}
+        - {x: 15, y: 2.5}
+        maxPosX:
+        - {x: 7.5, y: 0, z: 0}
+        - {x: 10, y: 0, z: 0}
+        maxPosY:
+        - {x: 0, y: 4, z: 0}
+        - {x: 0, y: 4, z: 0}
+    - baseParams:
+        replacementCharacter: 52
+        storyObjectIndex: 5
+        action: 0
+        modifier: 2
+        amountTargeted: 1
+      extraParams:
+        type: 2
+        positions:
+        - {x: 32, y: 1.5}
+        maxPosX:
+        - {x: 8.5, y: 0, z: 0}
+        maxPosY:
+        - {x: 0, y: 4, z: 0}
+  - text: Trapped in mars the onslaught came 1's and 2's and 3's and 4's
+    level: {fileID: 7802124823483562839, guid: 8e768fe7afa8146cc8e4f71a83bec214, type: 3}
+    positions:
+    - storyObjectIndex: 0
+      positions:
+      - {x: -14, y: 4, z: 0}
+    contexts:
+    - baseParams:
+        replacementCharacter: 49
+        storyObjectIndex: 6
+        action: 0
+        modifier: 3
+        amountTargeted: 2
+      extraParams:
+        type: 2
+        positions:
+        - {x: -8.5, y: 1.5}
+        - {x: 4.5, y: 1.5}
+        maxPosX:
+        - {x: 6, y: 0, z: 0}
+        - {x: 3.5, y: 0, z: 0}
+        maxPosY:
+        - {x: 0, y: 4, z: 0}
+        - {x: 0, y: 4, z: 0}
+    - baseParams:
+        replacementCharacter: 50
+        storyObjectIndex: 7
+        action: 0
+        modifier: 3
+        amountTargeted: 2
+      extraParams:
+        type: 2
+        positions:
+        - {x: 10, y: 1.5}
+        - {x: 18.5, y: -0.5}
+        maxPosX:
+        - {x: 2.5, y: 0, z: 0}
+        - {x: 7, y: 0, z: 0}
+        maxPosY:
+        - {x: 0, y: 4, z: 0}
+        - {x: 0, y: 4, z: 0}
+    - baseParams:
+        replacementCharacter: 51
+        storyObjectIndex: 8
+        action: 0
+        modifier: 3
+        amountTargeted: 2
+      extraParams:
+        type: 2
+        positions:
+        - {x: 48, y: -1.5}
+        - {x: 57, y: -1.5}
+        maxPosX:
+        - {x: 5, y: 0, z: 0}
+        - {x: 3, y: 0, z: 0}
+        maxPosY:
+        - {x: 0, y: 4, z: 0}
+        - {x: 0, y: 4, z: 0}
+    - baseParams:
+        replacementCharacter: 52
+        storyObjectIndex: 9
+        action: 0
+        modifier: 3
+        amountTargeted: 2
+      extraParams:
+        type: 2
+        positions:
+        - {x: 78, y: -10.5}
+        - {x: 96, y: -5.5}
+        maxPosX:
+        - {x: 8, y: 0, z: 0}
+        - {x: 4, y: 0, z: 0}
+        maxPosY:
+        - {x: 0, y: 4, z: 0}
+        - {x: 0, y: 4, z: 0}
+  storyObjectCount: 10

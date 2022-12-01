@@ -9,4 +9,12 @@ public class StoryData
     {
         return storyObjects[index];
     }
+    public StoryData(BookCreationData bookData)
+    {
+        storyObjects = new StoryObject[bookData.coverObjects.Length];
+        for (int i = 0; i < storyObjects.Length; i++)
+        {
+            storyObjects[i] = bookData.coverObjects[i].GetStoryObject();
+        }
+    }
 }

@@ -5,6 +5,8 @@ using UnityEngine;
 public class StorySection
 {
     [SerializeField] string text;
+    [SerializeField] GameObject level;
+    [SerializeField] StoryObjectPositions[] positions;
     [SerializeField] SectionContext[] contexts;
     public string GetText()
     {
@@ -33,13 +35,15 @@ public class StorySection
         int endIndex = text.Length;
         if (index != contexts.Length)
         {
-            endIndex = contexts[index].GetStringIndex(text) - 1;
+            endIndex = contexts[index].GetStringIndex(text);
         }
 
         if (endIndex < 0)
         {
             return "";
         }
+
+
         return text.Substring(startingIndex, endIndex - startingIndex);
     }
     public int GetSectionCount()
@@ -50,6 +54,54 @@ public class StorySection
     public SectionContext GetSectionContext(int index)
     {
         return contexts[index];
+    }
+
+    public int GetFirstNonSpace(string section)
+    {
+        for (int i = 0; i < section.Length; i++)
+        {
+            if (section[i] != ' ')
+            {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    public string GetFullText(StoryData storyData)
+    {
+        string[] stringContexts = new string[contexts.Length];
+        string finalString = "";
+        for (int i = 0; i < contexts.Length; i++)
+        {
+            stringContexts[i] = contexts[i].GetContext(storyData);
+        }
+        for (int i = 0; i < contexts.Length; i++)
+        {
+            finalString += GetSection(i) + stringContexts[i];
+        }
+        finalString += GetSection(contexts.Length);
+        return finalString;
+    }
+
+    public GameObject LoadLevel(GameManager gameManager)
+    {
+        PlaceStoryObjects(gameManager);
+        GameObject levelGo = MonoBehaviour.Instantiate(level, Vector3.zero, Quaternion.identity);
+        for (int i = 0; i < contexts.Length; i++)
+        {
+            gameManager.UpdateStoryObject(contexts[i]);
+        }
+        levelGo.GetComponent<Level>().Init(gameManager);
+        return levelGo;
+    }
+
+    void PlaceStoryObjects(GameManager gameManager)
+    {
+        for (int i = 0; i < positions.Length; i++)
+        {
+            gameManager.PlaceStoryObject(positions[i].storyObjectIndex, positions[i].positions);
+        }
     }
 }
 
@@ -70,6 +122,9 @@ public class SectionContext
     {
         public StoryObject.Types type;
         public Vector2[] positions;
+        [Header("max pos x is for enemys that move in the x direction this indicates the maximum position they can move to same for maxPos y")]
+        public Vector3[] maxPosX;
+        public Vector3[] maxPosY;
     }
     [SerializeField] BaseParams baseParams;
     [SerializeField] ExtraParams extraParams;
@@ -108,3 +163,9 @@ public enum StoryObjectAction
     Nothing
 }
 
+[System.Serializable]
+public struct StoryObjectPositions
+{
+    public int storyObjectIndex;
+    public Vector3[] positions;
+}

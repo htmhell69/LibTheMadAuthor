@@ -10,22 +10,36 @@ public class StoryFillIn : MonoBehaviour
     {
         return coverObject != null;
     }
-    public void SetCoverObject(CoverObject coverObject, BookCreationData bookData)
+    public void SetCoverObject(CoverObject coverObject, BookCreation bookCreation, bool update)
     {
+        if (this.coverObject != null && !update)
+        {
+            bookCreation.CreateCoverObject(this.coverObject);
+        }
         this.coverObject = coverObject;
-        bookData.coverObjects[referenceCoverObject] = coverObject;
+
+        bookCreation.BookData().coverObjects[referenceCoverObject] = coverObject;
         coverObject.SetCoverImage(GetComponent<RawImage>());
     }
     public void SetReference(int referenceStoryObject)
     {
         this.referenceCoverObject = referenceStoryObject;
     }
-    public void UpdateCycle(BookCreationData bookData)
+    public void UpdateCycle(BookCreation bookCreation)
     {
-        if (bookData.coverObjects[referenceCoverObject] != coverObject)
+        if (bookCreation.BookData().coverObjects[referenceCoverObject] != coverObject)
         {
-            SetCoverObject(bookData.coverObjects[referenceCoverObject], bookData);
+            SetCoverObject(bookCreation.BookData().coverObjects[referenceCoverObject], bookCreation, true);
         }
     }
 
+    public void Select(Color32 highlightColor)
+    {
+        GetComponent<Outline>().effectColor = highlightColor;
+    }
+
+    public void UnSelect()
+    {
+        GetComponent<Outline>().effectColor = new Color32(0, 0, 0, 255);
+    }
 }

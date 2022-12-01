@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfc5f2f2a9c94420f9517657ee3424ad, type: 3}
+  m_Name: Catcus
+  m_EditorClassIdentifier: 
+  instances:
+  - type: 0
+    gameObject: {fileID: 750761162950973343, guid: a70a56cd3fe5c4b4b86812ef4815b072, type: 3}
+  - type: 1
+    gameObject: {fileID: 5700712087486201836, guid: af0f1b9742fed4d369bbc70a1b97ca2a, type: 3}
+  - type: 2
+    gameObject: {fileID: 4566709855607736828, guid: 54c4855886ac047f18e617ea56f05ab2, type: 3}
+  objectName: Cactus

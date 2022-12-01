@@ -7,7 +7,7 @@ public class Story : ScriptableObject
 {
     [SerializeField] StorySection[] sections;
     [SerializeField] int storyObjectCount;
-    public int sectionLength()
+    public int SectionLength()
     {
         return sections.Length;
     }

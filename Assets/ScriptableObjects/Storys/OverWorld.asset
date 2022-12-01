@@ -1,0 +1,251 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b2a96805dd3c4ded930fa97f019b8e0, type: 3}
+  m_Name: OverWorld
+  m_EditorClassIdentifier: 
+  sections:
+  - text: You sent out 1 into the vast plains in hopes of stopping dr swez. But a
+      herd of 2's were waiting for 3's arrival.
+    level: {fileID: 7802124823483562839, guid: 748cbcaaaab894dee86ab7188967125a, type: 3}
+    positions: []
+    contexts:
+    - baseParams:
+        replacementCharacter: 49
+        storyObjectIndex: 0
+        action: 0
+        modifier: 2
+        amountTargeted: 1
+      extraParams:
+        type: 0
+        positions:
+        - {x: -10, y: 4}
+        maxPosX: []
+        maxPosY: []
+    - baseParams:
+        replacementCharacter: 50
+        storyObjectIndex: 1
+        action: 0
+        modifier: 1
+        amountTargeted: 2
+      extraParams:
+        type: 2
+        positions:
+        - {x: 0.5, y: 0}
+        - {x: 27.5, y: 2}
+        maxPosX:
+        - {x: 6, y: 0, z: 0}
+        - {x: 3, y: 0, z: 0}
+        maxPosY:
+        - {x: 0, y: 4, z: 0}
+        - {x: 0, y: 4, z: 0}
+    - baseParams:
+        replacementCharacter: 51
+        storyObjectIndex: 0
+        action: 5
+        modifier: 1
+        amountTargeted: 3
+      extraParams:
+        type: 0
+        positions:
+        - {x: 0, y: 0}
+        - {x: 27.5, y: 0}
+        maxPosX: []
+        maxPosY: []
+  - text: After narrowly avoiding the 1's. 2 found himself deep underground. While
+      rushing to get out he ran into 2 3's and a strong 4.
+    level: {fileID: 7802124823483562839, guid: f2b711b8f3a8444afa1f2d8a17ef64e1, type: 3}
+    positions:
+    - storyObjectIndex: 0
+      positions:
+      - {x: -10, y: -5, z: 0}
+    contexts:
+    - baseParams:
+        replacementCharacter: 49
+        storyObjectIndex: 1
+        action: 5
+        modifier: 0
+        amountTargeted: 1
+      extraParams:
+        type: 0
+        positions:
+        - {x: 0, y: 10}
+        maxPosX: []
+        maxPosY: []
+    - baseParams:
+        replacementCharacter: 50
+        storyObjectIndex: 0
+        action: 5
+        modifier: 0
+        amountTargeted: 1
+      extraParams:
+        type: 0
+        positions:
+        - {x: 0, y: 10}
+        maxPosX: []
+        maxPosY: []
+    - baseParams:
+        replacementCharacter: 51
+        storyObjectIndex: 2
+        action: 0
+        modifier: 1
+        amountTargeted: 2
+      extraParams:
+        type: 2
+        positions:
+        - {x: -2.5, y: -3.5}
+        - {x: 12.5, y: -2.5}
+        maxPosX:
+        - {x: 6.5, y: 0, z: 0}
+        - {x: 15, y: 0, z: 0}
+        maxPosY:
+        - {x: 0, y: 4, z: 0}
+        - {x: 0, y: 4, z: 0}
+    - baseParams:
+        replacementCharacter: 52
+        storyObjectIndex: 3
+        action: 0
+        modifier: 2
+        amountTargeted: 1
+      extraParams:
+        type: 2
+        positions:
+        - {x: 44.5, y: 0.75}
+        maxPosX:
+        - {x: 5, y: 0, z: 0}
+        maxPosY:
+        - {x: 0, y: 4, z: 0}
+  - text: But the 1 was not out of trouble yet as the ground was covered with lava.
+      But you left a 2 for him. On the other side the same 3's were waiting.
+    level: {fileID: 7802124823483562839, guid: 837325c8951954d85858f923b2cb4cf6, type: 3}
+    positions:
+    - storyObjectIndex: 0
+      positions:
+      - {x: -14, y: -3, z: 0}
+    contexts:
+    - baseParams:
+        replacementCharacter: 49
+        storyObjectIndex: 0
+        action: 5
+        modifier: 0
+        amountTargeted: 1
+      extraParams:
+        type: 0
+        positions:
+        - {x: 0, y: 10}
+        maxPosX: []
+        maxPosY: []
+    - baseParams:
+        replacementCharacter: 50
+        storyObjectIndex: 4
+        action: 0
+        modifier: 2
+        amountTargeted: 1
+      extraParams:
+        type: 1
+        positions:
+        - {x: 21, y: -5}
+        maxPosX:
+        - {x: 0, y: 0, z: 0}
+        maxPosY:
+        - {x: 0, y: 0, z: 0}
+    - baseParams:
+        replacementCharacter: 51
+        storyObjectIndex: 1
+        action: 0
+        modifier: 2
+        amountTargeted: 3
+      extraParams:
+        type: 2
+        positions:
+        - {x: 53.5, y: 0}
+        - {x: 70.5, y: 1}
+        - {x: 85.5, y: 1}
+        maxPosX:
+        - {x: 13.5, y: 0, z: 0}
+        - {x: 10, y: 0, z: 0}
+        - {x: 12.5, y: 0, z: 0}
+        maxPosY:
+        - {x: 0, y: 4, z: 0}
+        - {x: 0, y: 4, z: 0}
+        - {x: 0, y: 4, z: 0}
+  - text: 'But that was not the end. As dr swez teleported the 1 into a huge cave
+      filled with lava and 2''s and 3''s and 4''s. '
+    level: {fileID: 7802124823483562839, guid: 3b4edfeaf1c314581be51f8cbfeace10, type: 3}
+    positions:
+    - storyObjectIndex: 0
+      positions:
+      - {x: -14, y: -10, z: 0}
+    contexts:
+    - baseParams:
+        replacementCharacter: 49
+        storyObjectIndex: 0
+        action: 5
+        modifier: 0
+        amountTargeted: 1
+      extraParams:
+        type: 0
+        positions:
+        - {x: 0, y: 10}
+        maxPosX: []
+        maxPosY: []
+    - baseParams:
+        replacementCharacter: 50
+        storyObjectIndex: 5
+        action: 0
+        modifier: 2
+        amountTargeted: 2
+      extraParams:
+        type: 2
+        positions:
+        - {x: -10.5, y: -11}
+        - {x: 1.5, y: -12.5}
+        maxPosX:
+        - {x: 7, y: 0, z: 0}
+        - {x: 3.5, y: 0, z: 0}
+        maxPosY:
+        - {x: 0, y: 3, z: 0}
+        - {x: 0, y: 4, z: 0}
+    - baseParams:
+        replacementCharacter: 51
+        storyObjectIndex: 6
+        action: 0
+        modifier: 3
+        amountTargeted: 2
+      extraParams:
+        type: 2
+        positions:
+        - {x: 39.5, y: -14}
+        - {x: 70, y: 21}
+        maxPosX:
+        - {x: 5, y: 0, z: 0}
+        - {x: 3, y: 0, z: 0}
+        maxPosY:
+        - {x: 0, y: 2, z: 0}
+        - {x: 0, y: 4, z: 0}
+    - baseParams:
+        replacementCharacter: 52
+        storyObjectIndex: 7
+        action: 0
+        modifier: 3
+        amountTargeted: 2
+      extraParams:
+        type: 2
+        positions:
+        - {x: 169, y: -15}
+        - {x: 206.5, y: 1.5}
+        maxPosX:
+        - {x: 3, y: 0, z: 0}
+        - {x: 5, y: 0, z: 0}
+        maxPosY:
+        - {x: 0, y: 3, z: 0}
+        - {x: 0, y: 4, z: 0}
+  storyObjectCount: 8

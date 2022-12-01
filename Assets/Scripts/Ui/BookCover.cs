@@ -11,6 +11,6 @@ public class BookCover : MonoBehaviour
     {
         coverObject.SetColor(bindingImage);
         coverObject.SetCoverImage(coverImage);
-        button.onClick.AddListener(delegate { bookCreation.AssignCoverObject(coverObject); });
+        button.onClick.AddListener(delegate { bookCreation.AssignCoverObject(coverObject); Destroy(gameObject); });
     }
 }
